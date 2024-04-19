@@ -1,11 +1,13 @@
-### Create Workspace
+### ROS2 Commands and Notes
+
+#### Create Workspace
 
 1. mkdir ws
 2. cd ws
 3. colcon build
 4. cd install && source setup.bash
 
-### Create c++ package
+#### Create C++ Package
 
 `ros2 pkg create my_pkg --build-type ament_cmake --dependencies rclcpp `
 
@@ -15,13 +17,13 @@
 
 `source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`
 
-#### vscode includes
+#### Vscode Includes
 
 go to c/c++ configuration then c_cpp_properties.json and add this path in includes
 
 ` "/opt/ros/foxy/include/**",`
 
-#### MAKE NODE EXECUTABLE
+#### Make Node Executable
 
 ```
 
@@ -34,13 +36,13 @@ install(TARGETS
 )
 ```
 
-#### ros2 action
+#### Ros2 Action
 
 `ros2 interface show pkg /acion/action name `
 
-### Add ros2 action
+### Add Ros2 Action
 
-#### in xml
+#### In xml
 
 ```
  <buildtool_depend>rosidl_default_generators</buildtool_depend>
@@ -49,7 +51,7 @@ install(TARGETS
 
 ```
 
-#### in cmake
+#### In cmake
 
 ```
 
