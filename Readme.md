@@ -2,10 +2,12 @@
 
 #### Create Workspace
 
-1. mkdir ws
-2. cd ws
-3. colcon build
-4. cd install && source setup.bash
+```
+mkdir ws
+cd ws
+colcon build 
+source install/setup.bash
+```
 
 #### Create C++ Package
 
