@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/wafaa/swarm_turtlebot_web/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/leader/BehaviorTree.CPP/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/frontier_exploration/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/leader/leader_bt_pkg/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/simulation_pkgs_for_turtlebot/multibot_layers/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/simulation_pkgs_for_turtlebot/simple_layers/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/swarm_interface/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/simulation_pkgs_for_turtlebot/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/simulation_pkgs_for_turtlebot/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/wafaa/swarm_turtlebot_web/src/simulation_pkgs_for_turtlebot/turtlebot3_slam/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
