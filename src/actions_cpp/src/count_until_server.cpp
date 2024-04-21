@@ -22,7 +22,12 @@ private:
   goal_callback(const rclcpp_action::GoalUUID &uuid,
                 const std::shared_ptr<const CountUntil::Goal> goal) {
     (void)uuid;
-    (void)goal;
+    RCLCPP_INFO(this->get_logger(), "Recieved a goal ");
+    if (goal->target_number < 0.0) {
+      RCLCPP_INFO(this->get_logger(), "Rejecting the goal ");
+      return rclcpp_action::GoalResponse::REJECT;
+    }
+    RCLCPP_INFO(this->get_logger(), "Accepting the goal ");
     return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
   }
 
@@ -45,17 +50,23 @@ private:
 
     // Execute the action
     int counter = 0;
+    auto feedback = std::make_shared<CountUntil::Feedback>();
     rclcpp::Rate loop_rate(1.0 / period);
     for (int i = 0; i < target_number; i++) {
       counter++;
+      feedback->current_number = counter;
+      goal_handle->publish_feedback(feedback);
       RCLCPP_INFO(this->get_logger(), "%d", counter);
       loop_rate.sleep();
     }
     // Set final state and return result
-    auto result = std::shared_ptr<CountUntil::Result>();
+    auto result = std::make_shared<CountUntil::Result>();
     result->reached_number = counter;
+    RCLCPP_INFO(this->get_logger(), "Result: %d", counter);
     goal_handle->succeed(result);
+    // goal_handle->abort(result);
   }
+
   rclcpp_action::Server<CountUntil>::SharedPtr count_until_server_;
 };
 
